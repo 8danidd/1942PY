@@ -103,15 +103,15 @@ elif inputkey == "r":
     fullMessage = input("Message: ")
     messageSplit = fullMessage.split(",")
 
-    if messageSplit[0] == "URGENT":
-        urgent = True
-    elif ranks[messageSplit[1]] > ranks[messageSplit[3]]:
-        urgent = True
-        offset = -1
-    else:
-        offset = -1
 
     if messageSplit[2 and 4 + offset] in ranks:
+        if messageSplit[0] == "URGENT":
+            urgent = True
+        elif ranks[messageSplit[1]] > ranks[messageSplit[3]]:
+            urgent = True
+            offset = -1
+        else:
+            offset = -1
         if urgent == True:
             print("<<< URGENT >>>")
         print(f"From: {messageSplit[1 + offset]}")
